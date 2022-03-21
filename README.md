@@ -2,7 +2,7 @@
 
 ![alt text](cover.png)
 
-YouTube Link: https://youtu.be/i7FzA4NavDs
+YouTube Link: coming soon
 
 In this exciting video we are going to make the classic game space invaders with JavaScript on a HTML canvas. Best of all we will code everything from scratch starting with an empty project.
 
