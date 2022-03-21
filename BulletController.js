@@ -26,13 +26,12 @@ export default class BulletController {
   }
 
   collideWith(sprite) {
-    const bulletThatHitSprite = this.bullets.find((bullet) =>
+    const bulletThatHitSpriteIndex = this.bullets.findIndex((bullet) =>
       bullet.collideWith(sprite)
     );
 
-    if (bulletThatHitSprite) {
-      const bulletIndex = this.bullets.indexOf(bulletThatHitSprite);
-      this.bullets.splice(bulletIndex, 1);
+    if (bulletThatHitSpriteIndex >= 0) {
+      this.bullets.splice(bulletThatHitSpriteIndex, 1);
       return true;
     }
 
