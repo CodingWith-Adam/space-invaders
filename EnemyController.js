@@ -28,7 +28,7 @@ export default class EnemyController {
     this.playerBulletController = playerBulletController;
 
     this.enemyDeathSound = new Audio("sounds/enemy-death.wav");
-    this.enemyDeathSound.volume = 0.5;
+    this.enemyDeathSound.volume = 0.1;
 
     this.createEnemies();
   }
@@ -129,6 +129,8 @@ export default class EnemyController {
     });
   }
 
+  happy = () => {};
+
   createEnemies() {
     this.enemyMap.forEach((row, rowIndex) => {
       this.enemyRows[rowIndex] = [];
@@ -143,8 +145,6 @@ export default class EnemyController {
   }
 
   collideWith(sprite) {
-    return this.enemyRows.some((enemyRow) =>
-      enemyRow.some((enemy) => enemy.collideWith(sprite))
-    );
+    return this.enemyRows.flat().some((enemy) => enemy.collideWith(sprite));
   }
 }
